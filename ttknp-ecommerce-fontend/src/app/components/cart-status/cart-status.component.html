@@ -1,0 +1,9 @@
+<div class="cart-area d-n " style="margin-left: 50px;">
+  <a routerLink="/cart-detail">
+    <!-- now when u click div,i it will go to /cart-details-->
+    <div class="total mt-0" style="padding-left: 15px">
+      {{ totalPrice | currency : 'THB' }} <span> {{ totalQuantity }} psc.</span>
+    </div>
+    <i class="fa fa-shopping-cart" style="margin-top: 13px" aria-hidden="true"></i>
+  </a>
+</div>

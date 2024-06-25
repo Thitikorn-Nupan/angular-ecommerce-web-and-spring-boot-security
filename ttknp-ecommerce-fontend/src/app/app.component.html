@@ -1,0 +1,88 @@
+<!-- Test 1 -->
+<!--<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">TTKNP Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      &lt;!&ndash; Categories name&ndash;&gt;
+      <app-product-categories></app-product-categories>
+      &lt;!&ndash;&ndash;&gt;
+
+      &lt;!&ndash; Form search &ndash;&gt;
+      <app-form-search></app-form-search>
+      &lt;!&ndash;&ndash;&gt;
+
+      &lt;!&ndash; Cart Status&ndash;&gt;
+      <app-cart-status></app-cart-status>
+      &lt;!&ndash;&ndash;&gt;
+    </div>
+
+  </div>
+</nav>
+
+<main class="container">
+  <div class="bg-body-tertiary p-5 rounded">
+    <h1>Navbar example</h1>
+    </div>
+</main>-->
+<header class="p-3 text-bg-dark" >
+  <div class="container" style="margin: 0 auto">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" style="margin: 0 auto; max-width: 1440px">
+      <!-- use routerLink for block refresh-->
+      <a routerLink="/products" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <img width="35px" src="assets/images/welcome.png" class="img-responsive" alt="" style="margin-bottom: 8px">
+      </a>
+
+
+      <app-product-categories></app-product-categories>
+
+
+      <app-form-search></app-form-search>
+
+
+      <app-cart-status></app-cart-status>
+
+
+      <app-login-status></app-login-status>
+
+    </div>
+  </div>
+</header>
+
+
+
+<div class="album py-5 bg-body-tertiary" style="margin: 0 auto; max-width: 950px">
+  <div class="container">
+
+      <!-- *** Importance
+          By default i use
+          <app-products></app-products>
+          but i make it is a main component for roter out let
+          now i use <router-outlet></router-outlet> instead
+      -->
+      <router-outlet></router-outlet>
+
+  </div>
+</div>
+
+
+<div class="container" style="max-width: 100%; margin: 0 auto">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3" >
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><i class="fa-brands fa-github"></i></a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><i class="fa-brands fa-linkedin"></i></a></li>
+    </ul>
+    <p class="text-center text-body-secondary">&copy; 2024 Company, Inc</p>
+  </footer>
+</div>
+
+
+
+
+
+
+
+

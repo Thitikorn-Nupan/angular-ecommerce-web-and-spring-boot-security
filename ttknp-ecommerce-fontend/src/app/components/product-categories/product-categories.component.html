@@ -1,0 +1,10 @@
+<ul class="nav col-12 col-lg-auto me-lg-auto  justify-content-center mb-md-0">
+  <li><!-- use routerLink for block refresh-->
+    <a routerLink="/products" class="nav-link px-2 text-secondary" style="font-weight: bold; font-size: 23px; margin-left: 15px">TTKNP Shop</a>
+  </li>
+  <li><a  class="nav-link px-2 text-white" style="margin-top: 8px" disabled="true">Categories</a></li>
+  <li *ngFor="let productCategory of productCategories">
+    <!-- use routerLink for block refresh-->
+    <a routerLink="/category/{{productCategory.id}}" routerLinkActive="active-link" class="nav-link px-2 text-white" style="margin-top: 8px">{{ productCategory.categoryName }}</a>
+  </li>
+</ul>

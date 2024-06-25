@@ -1,0 +1,12 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- looks like => 22:39:23.992 [main] DEBUG c.t.server.controller.RouteControl : Hello World -->
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO,DEBUG">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

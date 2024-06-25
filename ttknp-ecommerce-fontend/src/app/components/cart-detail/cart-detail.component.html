@@ -1,0 +1,70 @@
+<div class="main-content" >
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+
+
+      <div *ngIf="cartItems.length > 0"> <!-- else it means nothing to show-->
+        <table class="table table-bordered">
+          <tbody class="text-center">
+
+          <tr >
+            <th>Product image</th>
+            <th>Product Detail</th>
+            <th>Quantity And Total Price</th>
+          </tr>
+
+          <!-- Loop for display cart items-->
+          <tr *ngFor="let cartItem of cartItems">
+
+            <!-- Product image -->
+            <td>
+              <img src="{{cartItem.imageUrl}}" style="width: 250px; height: auto; margin-bottom: 50px" class="">
+            </td>
+
+            <!-- Product Detail -->
+            <td style="padding: 85px 0 0;">
+              <p >{{ cartItem.name }}</p>
+              <p>{{ cartItem.price | currency : 'THB' }}</p>
+            </td>
+
+            <!-- Quantity And Total Price  -->
+            <td style="padding: 65px 0 0;">
+              <!-- (click) in angular it works after user clicked (real time) -->
+              <button (click)="incrementQuantity(cartItem)" class="btn btn-warning btn-sm m-lg-4">
+                <i class="fa-solid fa-square-plus"></i>
+              </button>
+              <span>{{cartItem.quantity}}</span>
+              <button (click)="decrementQuantity(cartItem)" class="btn btn-warning btn-sm m-lg-4">
+                <i class="fa-solid fa-square-minus"></i>
+              </button>
+              <button (click)="removeCartItem(cartItem)" class="btn btn-danger btn-sm m-lg-4">
+                <i class="fa-solid fa-rectangle-xmark"></i>
+              </button>
+              <p>Total {{ cartItem.quantity * cartItem.price | currency : 'THB' }}</p>
+            </td>
+
+          </tr>
+
+          </tbody>
+          <tfoot class="text-center " >
+
+          <tr class="">
+            <td colspan="2"></td>
+            <td style="font-weight: bold;" class="p-5">
+              <p>Total quantities : {{ totalQuantity }} Psc</p>
+              <p>Total Price : {{ totalPrice | currency : 'THB' }}</p>
+              <p>Shipping : Free</p>
+              <!-- -->
+              <a routerLink="/checkout" class="btn btn-success btn-sm">Checkout</a>
+            </td>
+          </tr>
+
+          </tfoot>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

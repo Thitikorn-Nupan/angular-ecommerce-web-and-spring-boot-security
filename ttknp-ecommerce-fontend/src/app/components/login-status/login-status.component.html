@@ -1,0 +1,23 @@
+<div class="cart-area d-n " style="margin-left: 50px;">
+  <!-- use if for check order history-->
+  <a *ngIf="!disableLogin " routerLink="/login" >
+    <!-- now when u click div,i it will go to /cart-details-->
+    <div class="total mt-0" style="padding: 0 5px; color: black">
+      Login
+    </div>
+  </a>
+
+  <a  *ngIf="disableLogin"  routerLink="/orders-history">
+    <!-- now when u click div,i it will go to /cart-details-->
+    <div class="total mt-0" style="padding: 0 5px; margin-left: 5px; color: black">
+      Orders history
+    </div>
+  </a>
+
+  <a  *ngIf="disableLogin">
+    <!-- now when u click div,i it will go to /cart-details-->
+    <button class="total mt-0" style="padding: 0 5px; margin-left: 5px; color: black" (click)="logout()" >
+      Logout
+    </button>
+  </a>
+</div>

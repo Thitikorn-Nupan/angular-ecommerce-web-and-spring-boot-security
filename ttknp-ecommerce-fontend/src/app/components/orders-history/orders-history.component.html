@@ -1,0 +1,40 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+
+      <h3 class="mb-4">Your Orders</h3>
+
+      <div *ngIf="orderHistory.length > 0">
+        <table class="table table-bordered">
+          <tbody class="text-center">
+
+          <tr>
+            <th>Order Tracking Number</th>
+            <th>Total Price</th>
+            <th>Total Quantity</th>
+            <th>Date</th>
+          </tr>
+          <!-- Loop for display cart items-->
+          <tr *ngFor="let order of orderHistory">
+            <td>
+              {{ order.orderTrackingNumber }}
+            </td>
+            <td>
+              {{ order.totalPrice | currency : 'THB' }}
+            </td>
+            <td>
+              {{ order.totalQuantity }}
+            </td>
+            <td>
+              <!-- common date pipe -->
+              {{ order.dateCreated | date : 'medium' }}
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
